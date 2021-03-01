@@ -1,0 +1,1 @@
+Start the program with `go build && ./process-poc`. Then kill the main process and look for the longrunning processes. `ps j -A` lists all processes with their process group id. All processes belonging to process-poc should have the same group id. You should be able to kill all processes in the shell using `kill -SIGINT -- -<PGID>` (replace `<PGID>` with the process group id).
